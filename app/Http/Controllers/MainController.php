@@ -18,7 +18,7 @@ class MainController extends Controller
             ->orwhere('title', 'Bayam Hijau')
             ->orwhere('title', 'Pepaya')
             ->get();
-            
+
         return Inertia::render('home', compact('product'));
     }
 
@@ -34,14 +34,18 @@ class MainController extends Controller
         } else {
             $paramSearch = "";
         }
-        if ($request->category){
-            $paramCategory=$request->category;
+        if ($request->category) {
+            $paramCategory = $request->category;
         } else {
-            $paramCategory="";
+            $paramCategory = "";
         }
 
-        // dd($paramCategory);
-        return Inertia::render('product', compact('paramSearch', 'paramCategory'));
+
+        $product = Product::where('category', 'like', '%' . $paramCategory . '%')
+            ->where('title', 'like', '%' . $paramSearch . '%')
+            ->paginate(14);
+
+        return Inertia::render('product', compact('product'));
     }
 
     public function show(string $slug)

@@ -16,8 +16,12 @@ export default function Card(props: Card) {
     return (
         <div className="w-full h-full">
             <Link href={`/produk/${props.slug}`}>
-                <div className="flex justify-center ">
-                    <img className="size-fit" src={props.image} alt="" />
+                <div className="flex justify-center">
+                    <img
+                        className="min-h-44 object-cover"
+                        src={props.image}
+                        alt=""
+                    />
                 </div>
                 <div className="p-2">
                     <h3 className="text-sm text-slate-900">{props.title}</h3>

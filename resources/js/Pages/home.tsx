@@ -72,8 +72,13 @@ export default function Home({ product }: any) {
                     showIndicators={true}
                     showStatus={false}
                 >
-                    <img src="/img/image 10.png" />
-                    <img src="/img/image 10.png" />
+                    <img src="/img/banner2.png" />
+                    <img src="/img/banner2.png" />
+                    {/* <img src="/img/banner1.jpeg" /> */}
+                    {/* <img src="/img/image 10.png" />
+                    <img src="/img/image 10.jpg" />
+                    <img src="/img/image 12.jpg" />
+                    <img src="/img/image 11.jpg" /> */}
                 </Carousel>
             </div>
             <div className="w-full p-4 pt-8 bg-white grid grid-cols-4 justify-items-center gap-y-4">

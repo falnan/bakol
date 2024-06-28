@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function login()
     {
-        dd(Auth::id());
+        // dd(Auth::id());
         return Inertia::render('auth/login');
     }
     public function auth(Request $request)
